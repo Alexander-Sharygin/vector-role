@@ -1,5 +1,4 @@
 ---
-tasks:
 - name: Get vector rpm distrib
   ansible.builtin.get_url:
     url: "{{ vector_rpm_url }}"
