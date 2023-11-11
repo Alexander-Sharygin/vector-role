@@ -3,3 +3,4 @@
 vector_version: "0.32.1"
 vector_conf_dest: "/etc/vector/vector.toml"
 data_dir: "/var/lib/vector/test"
+vector_config:

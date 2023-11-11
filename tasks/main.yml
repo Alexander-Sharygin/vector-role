@@ -16,7 +16,6 @@
   ansible.builtin.template:
     src: "{{ vector_conf_template }}"
     dest: "{{ vector_conf_dest }}"
+    validate: vector validate %s
     mode: "664"
-
-- name: Flush handlers
-  ansible.builtin.meta: flush_handlers
+  notify: Start vector service
