@@ -1,6 +1,6 @@
 galaxy_info:
   role_name: vector_role  # if absent directory name hosting role is used instead
-  namespace: my_galaxy_namespace  # if absent, author is used instead
+  namespace: al_sharygin  # if absent, author is used instead
   author: Alexander Sharygin
   description: Deploy vector
   company: IT Magistr
