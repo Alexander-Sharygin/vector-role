@@ -1,4 +1,11 @@
 ---
+- name: Create directory for vector data "{{ data_dir }}"
+  become: true
+  ansible.builtin.file:
+    path: "{{ data_dir }}"
+    mode: "0644"
+    state: directory
+
 - name: Get vector rpm distrib
   ansible.builtin.get_url:
     url: "{{ vector_rpm_url }}"
