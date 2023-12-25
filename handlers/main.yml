@@ -1,6 +1,4 @@
 ---
 - name: Start vector service
   become: true
-  ansible.builtin.service:
-    name: vector
-    state: started
+  shell: vector >/dev/null 2>&1 &

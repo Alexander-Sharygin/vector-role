@@ -20,8 +20,20 @@
     ansible.builtin.command: vector validate
     register: vld_res
     changed_when: false
+
+  - name: Check vector process PID
+    shell: >
+      echo -n $(pgrep vector)
+    register: vector_pid
+
   - name: Assert vector configuragtion
     ansible.builtin.assert:
       that:
         - vld_res.rc == 0
         - "'Validated' == {{ vld_res.stdout_lines | map('trim') | list }}[-1]"
+
+  - name: Check vector service
+    assert:
+      that: vector_pid.stdout != 0
+      success_msg: "Service is running"
+      fail_msg: "Service not running"
